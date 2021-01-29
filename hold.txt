@@ -1,0 +1,24 @@
+let pRay = new Ray(createVector(0,0,0), createVector(xx, yy, -1));
+let pHit = pRay.getPoint(pRay.checkIntersection(sphere)[0])
+let nHit = p5.Vector.sub(pHit,sphere.pos);
+nHit.normalize();
+
+// print(deltabetween)
+let sRay = new Ray(pRay.getPoint(pRay.checkIntersection(sphere)[0]), createVector(0,10,-30))
+let deltabetween = sRay.dir.angleBetween(nHit);
+
+
+// print(d)
+if(deltabetween > Math.PI/2 || deltabetween < -Math.PI/2){
+  //print("e");
+}
+if(deltabetween > Math.PI/2 || deltabetween < -Math.PI/2){
+  // print("Here")
+  
+  fill(0,0,0);
+}else if (deltabetween < Math.PI/2 && deltabetween > -Math.PI/2){
+  // print("heer")
+  fill(0,255,0);
+}else{
+  fill(0,0,0);
+}
